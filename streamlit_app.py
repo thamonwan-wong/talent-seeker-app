@@ -1177,7 +1177,7 @@ def resume_scanner_page():
 
                         upload_results_to_bigquery(selected_job_id, similarity_results, adjusted_scores, comments)
                         st.success("Results uploaded to BigQuery.")
-                        print("Data uploaded to BigQuery. Please click 'Reload Candidate Data' to view the result")
+                        print("Data uploaded to BigQuery. Please click 'Load Candidate Data' to view the result")
 
                 else:
                         st.warning("No resumes were successfully extracted.")
@@ -1190,7 +1190,7 @@ def resume_scanner_page():
         st.write("Below is the list of applicants ranked by their average score:")
 
         # "Reload Data" Button
-        if st.button("Reload Candidate Data"):
+        if st.button("Load Candidate Data"):
             try:
                 project_id = 'is-resume-445415'
                 client = bigquery.Client.from_service_account_info(service_account_file)
